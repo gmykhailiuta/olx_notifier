@@ -1,0 +1,6 @@
+lxml
+requests
+pynotify
+tempfile
+os
+time
