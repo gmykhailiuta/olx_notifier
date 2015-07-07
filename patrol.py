@@ -33,7 +33,7 @@ def signal_handler(signal, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-pynotify.init('MsgNotification')
+pynotify.init('olx_notify')
 offers_history = []
 pwd = os.path.dirname(os.path.realpath(__file__))
 
@@ -65,9 +65,9 @@ while True:
         if flag:
             offers_history += [{'image': image, 'url': url, 'title': title, 'price': price}]
             print("Noticed {}".format(title))
-            htmlbody = '<a href="{}">{}</a>'.format(url,title,price)
+            htmlbody = '<a href="{}">{}</a>'.format(url,title)
             notification(price, htmlbody, url, image)
             sleep(1)
-    sys.stdout.write(".")
-    sys.stdout.flush()
+    # sys.stdout.write(".")
+    # sys.stdout.flush()
     sleep(3)
